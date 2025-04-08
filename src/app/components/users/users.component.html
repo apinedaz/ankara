@@ -1,0 +1,49 @@
+<div class="content">
+    <mat-toolbar>
+        <mat-form-field appearance="fill" >
+            <mat-label>Busqueda</mat-label>
+            <input matInput placeholder="filtro" >
+        
+            <button mat-icon-button disableRipple class="but-srch">
+              <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <span class="spacer"></span>
+
+        <button title="Crear" color="primary" mat-icon-button>
+
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+    </mat-toolbar>
+
+    <div class="table-users">
+        <table mat-table #table [dataSource]="dataSource" style="position: sticky;">
+
+            @for (i of column; track $index) 
+            {
+                <ng-container matColumnDef="{{i}}">
+
+                    @if (i != 'editar')
+                    {
+                        <th mat-header-cell *matHeaderCellDef>{{i }}</th>
+                        <td mat-cell *matCellDef="let row"> {{row[i]}} </td>
+                    }
+            
+                    @if (i == 'editar') 
+                    {
+                        <th mat-header-cell *matHeaderCellDef>{{i}}</th>
+                        <td mat-cell *matCellDef="let row">
+                            <button mat-icon-button >
+                            <mat-icon>edit</mat-icon>
+                            </button>
+                        </td>
+                    }
+                </ng-container>
+            }
+        
+            <tr mat-header-row *matHeaderRowDef="column ; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: column;"></tr>
+          </table>
+    </div>
+</div>

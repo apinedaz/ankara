@@ -1,0 +1,30 @@
+.header{
+    background-image: url('/header.jpg');
+    height: 7%;
+    background-size: cover;
+    background-position-y: 54%;
+    top: 0%;
+    position: sticky;
+    z-index: 1;
+}
+
+.title{
+    color: whitesmoke;
+    transform: scale(150%);
+}
+
+.but{
+    color: whitesmoke;
+    transform: scale(150%);
+    margin-right: 3%;
+}
+
+.butM{
+    color: whitesmoke;
+    transform: scale(150%);
+    margin-left: 5%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

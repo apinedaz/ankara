@@ -1,0 +1,38 @@
+.content{
+    background-image: url('/background_2.jpeg');
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 0;
+    overflow-y: auto;
+    height: 81%;
+    align-content: center;
+    justify-content: center;
+}
+
+.card{
+    width: 60%;
+    height: 80%;
+    background-color: skyblue;
+}
+
+.title{
+    color: grey;
+    font-size: xx-large;
+}
+
+.content-card{
+    margin-top: 5%;
+    height: 70%;
+}
+
+mat-form-field{
+    width: 90%;
+    margin-left: 5%;   
+}
+
+.but{
+    margin-left: 8%;
+    width: 25%;
+    height: 140%;
+    background-color: cornflowerblue;
+}

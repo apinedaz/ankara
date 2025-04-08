@@ -1,0 +1,28 @@
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 0;
+    overflow-y: auto;
+    max-height: 81%;
+    background-image: url('/background_3.jpeg');
+}
+
+.card{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 1%;
+    background-color: aqua;
+    max-width: 18%;
+}
+
+.card-cont{
+    text-align-last: center;
+}
+
+.img-cont{
+    width: 80%;
+}
+
+.footer-card{
+    margin-left: 10%;
+}

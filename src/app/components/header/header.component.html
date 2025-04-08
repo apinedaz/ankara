@@ -1,0 +1,22 @@
+<mat-toolbar class="header">
+    <button [matMenuTriggerFor]="menu" mat-icon-button class="butM">
+        <mat-icon>menu</mat-icon>
+    </button>  
+    <span class="spacer"></span>
+    <span class="title">ANKARA STORE</span>
+    <span class="spacer"></span>
+    <button mat-icon-button class="but">
+        <mat-icon>person</mat-icon>
+    </button>
+    <button mat-icon-button class="but">
+        <mat-icon>home</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>Ofertas</button>
+    <button mat-menu-item>Nuevos</button>
+    <button mat-menu-item>Editores</button>
+    <button mat-menu-item>Personajes</button>
+    <button mat-menu-item>Contactanos</button>
+</mat-menu>

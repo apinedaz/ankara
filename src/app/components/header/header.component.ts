@@ -3,6 +3,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,13 @@ import { MatMenuModule } from '@angular/material/menu';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent 
+{
+  public constructor(private route:Router){}
+
+  public nav(url: string)
+  {
+    this.route.navigate([url])
+  }
 
 }

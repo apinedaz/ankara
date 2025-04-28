@@ -5,10 +5,10 @@
     <span class="spacer"></span>
     <span class="title">ANKARA STORE</span>
     <span class="spacer"></span>
-    <button mat-icon-button class="but">
+    <button mat-icon-button class="but" (click)="nav('user')">
         <mat-icon>person</mat-icon>
     </button>
-    <button mat-icon-button class="but">
+    <button mat-icon-button class="but" (click)="nav('home')">
         <mat-icon>home</mat-icon>
     </button>
 </mat-toolbar>
@@ -16,7 +16,7 @@
 <mat-menu #menu="matMenu">
     <button mat-menu-item>Ofertas</button>
     <button mat-menu-item>Nuevos</button>
-    <button mat-menu-item>Editores</button>
+    <button mat-menu-item (click)="nav('editors')">Editores</button>
     <button mat-menu-item>Personajes</button>
-    <button mat-menu-item>Contactanos</button>
+    <button mat-menu-item (click)="nav('contact')">Contactanos</button>
 </mat-menu>

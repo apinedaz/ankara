@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     z-index: 0;
     overflow-y: auto;
-    max-height: 81%;
+    height: 81%;
     background-image: url('/background_3.jpeg');
 }
 

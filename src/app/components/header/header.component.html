@@ -14,9 +14,10 @@
 </mat-toolbar>
 
 <mat-menu #menu="matMenu">
-    <button mat-menu-item>Ofertas</button>
-    <button mat-menu-item>Nuevos</button>
-    <button mat-menu-item (click)="nav('editors')">Editores</button>
-    <button mat-menu-item>Personajes</button>
-    <button mat-menu-item (click)="nav('contact')">Contactanos</button>
+
+    @for (i of options; track $index) 
+    {
+        <button mat-menu-item (click)="nav(i.url)">{{i.name}}</button>
+    }
+    
 </mat-menu>

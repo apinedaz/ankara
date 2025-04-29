@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -6,6 +6,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { UsersService } from '../../services/users.service';
+import { firstValueFrom } from 'rxjs';
 
 
 @Component({
@@ -22,9 +24,24 @@ import { MatInputModule } from '@angular/material/input';
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
-export class UsersComponent 
+export class UsersComponent implements OnInit
 {
-  public dataSource = [{Usuario:'admin',Nombre:'administrador',Correo:'afpineda1@poligran.edu.co',Telefono:'313 439 37 43'}];
+  public dataSource:any[];
 
   public column = ['Usuario','Nombre','Correo','Telefono','editar'];
+
+  constructor (private usersService: UsersService)
+  {
+    this.dataSource = [];
+  }
+
+  ngOnInit(): void {
+    firstValueFrom(this.usersService.getUsers()).then(resp =>
+      {
+        this.dataSource = resp    
+      }
+    )
+  }
+
+
 }

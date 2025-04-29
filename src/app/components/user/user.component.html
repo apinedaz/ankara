@@ -5,22 +5,25 @@
             <mat-card-title class="title">Usuario</mat-card-title>
         </mat-card-header>
         <mat-card-content class="content-card">
-            <mat-form-field appearance="fill">
-                <mat-label>Usuario</mat-label>
-                <input matInput >
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Nombre</mat-label>
-                <input matInput >
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Correo</mat-label>
-                <input matInput >
-            </mat-form-field>
-            <mat-form-field appearance="fill" >
-                <mat-label>Telefono</mat-label>
-                <input matInput>
-            </mat-form-field>
+            <form class="example-form">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput [formControl]="user">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput [formControl]="name">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Correo</mat-label>
+                    <input matInput [formControl]="email">
+                </mat-form-field>
+                <mat-form-field appearance="fill" >
+                    <mat-label>Telefono</mat-label>
+                    <input matInput [formControl]="phone">
+                </mat-form-field>
+            </form>
         </mat-card-content>
         <mat-card-actions >
             <button mat-stroked-button class="but">

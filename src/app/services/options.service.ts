@@ -5,18 +5,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ComicsService 
+export class OptionsService 
 {
-  private apiUrl = 'api/comics'
+  private apiUrl = 'api/options'
 
   constructor(private http: HttpClient) { }
 
-  public getComics(): Observable<any[]>
+  public getOptions(): Observable<any[]>
   {
     return this.http.get<any[]>(this.apiUrl);
-  }
-
-  public getComicsByEditor(editorId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}?editor_id=${editorId}`);
   }
 }

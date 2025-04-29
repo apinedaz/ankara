@@ -1,35 +1,40 @@
-<div class="content">
+@if (comics.length == 0) 
+{
+    <div class="content">
+    
+        @for (item of editors; track $index) 
+        {
+            <mat-card class="card" >
+                <mat-card-content >
+                    <button mat-button class="button" (click)="searchEditor(item.id)">
+                        <h1 class="title">{{item.name}}</h1>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        }  
+    </div>
+}
 
-    <mat-card class="card">
-        <mat-card-content >
-            <button mat-button class="button">
-                <h1 class="title">Editor 1</h1>
-            </button>
+@if (comics.length != 0) 
+{
+    <div class="content2">
+        
+        <mat-card-header>
+            <button mat-raised-button class="back" (click)="clear()">Limpiar</button>
+        </mat-card-header>
+    
+        <mat-card-content class="content2">
+    
+            <mat-card class="card2" *ngFor="let item of comics" >
+                <mat-card-content class="card-cont2">
+                    <img class="img-cont2" src="{{item.img}}">
+                </mat-card-content>
+                <mat-card-footer class="footer-card2">
+                    <mat-card-title>{{item.name}}</mat-card-title>
+                    <mat-card-subtitle>$ {{item.price}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+                </mat-card-footer>
+            </mat-card>    
         </mat-card-content>
-    </mat-card>
-
-    <mat-card class="card">
-        <mat-card-content >
-            <button mat-button class="button">
-                <h1 class="title">Editor 2</h1>
-            </button>
-        </mat-card-content>
-    </mat-card>
-
-    <mat-card class="card">
-        <mat-card-content >
-            <button mat-button class="button">
-                <h1 class="title">Editor 3</h1>
-            </button>
-        </mat-card-content>
-    </mat-card>
-     
-    <mat-card class="card">
-        <mat-card-content >
-            <button mat-button class="button">
-                <h1 class="title">Editor 4</h1>
-            </button>
-        </mat-card-content>
-    </mat-card>
-
-</div>
+    </div>
+}
